@@ -1,0 +1,41 @@
+Corrige et explications - Version 2
+B - Sans Collider adapte, la physique ne peut pas detecter le sol.
+A - XR Grab Interactable rend l'objet saisissable par les interactors.
+A - Rigidbody est generalement necessaire pour les objets physiques saisissables.
+A - XR Interactor Line Visual affiche visuellement le rayon.
+A - Teleportation Provider traite les demandes de teleportation.
+A - L'orientation finale depend des reglages de teleportation.
+A - NullReferenceException vient souvent d'une reference non assignee.
+A - FixedUpdate() est synchronisee avec la physique.
+A - Une coroutine doit etre lancee avec StartCoroutine().
+A - OnClick() doit contenir l'action appelee par le bouton.
+A - World Space place l'UI dans l'environnement 3D.
+A - Les evenements Trigger necessitent typiquement un Rigidbody implique.
+A - Is Trigger transforme le Collider en zone de detection.
+A - Les modifications locales doivent etre appliquees au Prefab.
+A - LoadScene necessite une scene incluse dans Build Settings.
+A - Les transitions Animator dependent de parametres et conditions.
+A - L'Animator Controller definit les etats d'animation.
+A - Une camera mal orientee ou filtree peut afficher du noir.
+A - AR Plane Manager est charge de detecter les plans.
+A - AR Raycast Manager convertit un toucher ecran en point AR.
+A - Les Anchors stabilisent les objets dans l'espace AR.
+A - Android AR necessite ARCore, camera et configuration XR correcte.
+A - iOS AR s'appuie sur ARKit.
+A - Image tracking depend d'une bibliotheque d'images correcte.
+A - La teleportation reduit souvent l'inconfort vestibulaire.
+A - SetActive permet d'activer ou desactiver un GameObject.
+A - Une reference assignee dans l'Inspector est simple et fiable.
+A - Un script desactive ne recoit pas les appels Unity.
+A - Un Rigidbody est requis pour de nombreuses interactions dynamiques.
+A - La detection continue peut limiter les traversees rapides.
+A - Les Layers filtrent rendu, raycasts et collisions.
+A - LayerMask limite les objets touches par un raycast.
+A - SceneManager appartient a UnityEngine.SceneManagement.
+A - Unity associe le MonoBehaviour au fichier du meme nom.
+A - L'optimisation mobile passe par la reduction de charge graphique.
+A - Instancier chaque frame peut provoquer ralentissements et allocations.
+A - Il faut distinguer appui unique et toucher continu.
+A - Les Interaction Layers doivent correspondre entre interactor et interactable.
+A - L'UI XR necessite un module d'entree compatible.
+A - La perte de tracking rend la pose AR instable ou indisponible.

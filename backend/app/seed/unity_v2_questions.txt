@@ -1,0 +1,241 @@
+Questions QCU
+
+1. Un objet tombe a travers le sol pendant l'execution. Quelle est la cause la plus probable ?
+A. Le Canvas est en World Space
+B. Le sol ou l'objet n'a pas de Collider adapte
+C. La scene contient trop de lumieres
+D. La camera n'a pas d'Audio Listener
+
+2. En VR, un cube ne peut pas etre saisi avec les controleurs. Quel composant manque le plus probablement sur le cube ?
+A. XR Grab Interactable
+B. AR Plane Manager
+C. Canvas Scaler
+D. Light Probe Group
+
+3. Un objet VR possede XR Grab Interactable mais ne reagit pas correctement a la physique. Quel composant est souvent requis ?
+A. Rigidbody
+B. TextMeshPro
+C. NavMesh Agent
+D. Sprite Mask
+
+4. Le rayon du controleur VR existe mais il n'est pas visible. Quel composant ou reglage faut-il verifier ?
+A. XR Interactor Line Visual
+B. AR Session Origin
+C. Audio Mixer
+D. Terrain Layer
+
+5. La teleportation VR ne fonctionne pas malgre une zone de teleportation. Quel element central peut manquer ?
+A. Teleportation Provider
+B. Image Target Library
+C. Mesh Renderer
+D. Particle System
+
+6. L'utilisateur VR se teleporte sur une zone, mais l'orientation finale est incoherente. Quel reglage est pertinent ?
+A. Match Orientation / orientation de la zone de teleportation
+B. Compression audio
+C. Couleur du materiau
+D. Taille de la texture UI
+
+7. Dans un script, une variable d'objet affichee dans l'Inspector provoque NullReferenceException. Quelle est la cause probable ?
+A. La reference n'a pas ete assignee dans l'Inspector
+B. Le projet contient trop de scenes
+C. Le script utilise trop de commentaires
+D. Le GameObject a un nom trop long
+
+8. Pour deplacer un Rigidbody avec coherence physique, quelle methode est preferable ?
+A. FixedUpdate()
+B. OnMouseDown()
+C. OnValidate()
+D. Reset()
+
+9. Une coroutine ne demarre pas alors que la methode IEnumerator existe. Quelle instruction manque probablement ?
+A. StartCoroutine(...)
+B. Debug.ClearDeveloperConsole()
+C. DestroyImmediate(...)
+D. Application.Quit()
+
+10. Un bouton UI ne declenche aucune action. Quelle configuration doit etre verifiee en priorite ?
+A. La liste OnClick() du composant Button
+B. Le nombre de triangles du modele
+C. Le type de Rigidbody
+D. Le mode de compression video
+
+11. Une interface VR apparait collee a l'ecran au lieu d'etre placee dans la scene. Quel mode Canvas faut-il utiliser ?
+A. World Space
+B. Screen Space Overlay
+C. Screen Space Camera uniquement
+D. Sprite Shape
+
+12. Un Trigger ne declenche pas OnTriggerEnter(). Quelle condition est souvent necessaire ?
+A. Au moins un des deux objets doit avoir un Rigidbody
+B. Les deux objets doivent avoir un Audio Source
+C. La camera doit etre orthographique
+D. Le Canvas doit etre desactive
+
+13. Un objet avec Collider bloque le joueur alors qu'il devrait seulement detecter son passage. Que faut-il modifier ?
+A. Activer Is Trigger
+B. Supprimer le Transform
+C. Ajouter un Animator
+D. Desactiver tous les scripts
+
+14. Un prefab modifie dans la scene ne change pas le prefab original. Que faut-il faire ?
+A. Appliquer les overrides au Prefab
+B. Reduire la taille de la scene
+C. Supprimer la camera principale
+D. Exporter le projet en WebGL
+
+15. Une scene doit etre chargee par script avec SceneManager.LoadScene(). Quelle condition est necessaire ?
+A. La scene doit etre ajoutee dans Build Settings
+B. La scene doit avoir exactement deux cameras
+C. La scene doit contenir un Terrain
+D. La scene ne doit pas contenir de lumiere
+
+16. Un objet anime ne change pas d'etat malgre une transition creee. Que faut-il verifier ?
+A. Les parametres et conditions de l'Animator Controller
+B. Le format du fichier audio
+C. Le type de police UI
+D. Le nom du dossier Assets
+
+17. Une animation ne joue pas car l'objet n'a aucun controleur assigne. Quel element manque ?
+A. Animator Controller
+B. Rigidbody Material
+C. AR Reference Image Library
+D. Canvas Group
+
+18. Une camera affiche un ecran noir alors que la scene contient des objets. Quel point faut-il verifier ?
+A. La position/orientation de la camera et son Culling Mask
+B. Le nom du script principal
+C. La presence d'un fichier README
+D. Le nombre de prefabs dans Project
+
+19. En AR, aucun plan n'apparait sur le telephone. Quel composant est le plus probablement absent ou desactive ?
+A. AR Plane Manager
+B. XR Grab Interactable
+C. Character Controller
+D. Animator Override Controller
+
+20. En AR, le placement par toucher ne fonctionne pas sur les surfaces detectees. Quel mecanisme est necessaire ?
+A. AR Raycast Manager
+B. Occlusion Area 2D
+C. Audio Reverb Zone
+D. Terrain Collider
+
+21. Un objet AR place sur un plan bouge ou derive fortement. Quelle solution est la plus adaptee ?
+A. Utiliser un Anchor ou attacher l'objet a un ARAnchor
+B. Ajouter une lumiere rouge
+C. Supprimer AR Session
+D. Augmenter le volume audio
+
+22. Une application AR fonctionne dans l'editeur mais pas sur Android. Que faut-il verifier ?
+A. ARCore support, permissions camera et parametres XR du build
+B. Le nombre exact de Materials
+C. Le nom de la Directional Light
+D. La presence d'un Canvas Overlay
+
+23. Une application AR iOS ne demarre pas correctement sur iPhone. Quel support doit etre configure ?
+A. ARKit
+B. OpenVR uniquement
+C. DirectX 12 uniquement
+D. Linux Build Support
+
+24. En image tracking, une image de reference n'est jamais reconnue. Quel element faut-il verifier ?
+A. La Reference Image Library et la qualite/format de l'image
+B. Le Rigidbody du Canvas
+C. Le volume du microphone
+D. La gravite globale
+
+25. En VR, l'utilisateur ressent une gene importante pendant le deplacement. Quelle approche reduit souvent le motion sickness ?
+A. Utiliser la teleportation ou un deplacement avec confort
+B. Augmenter le flou de mouvement
+C. Baisser fortement les FPS
+D. Forcer des rotations rapides automatiques
+
+26. Un objet doit rester invisible jusqu'a ce que le joueur appuie sur un bouton. Quelle methode est adaptee ?
+A. SetActive(false/true)
+B. Destroy le projet
+C. Supprimer le Transform
+D. Changer le nom de la scene
+
+27. Pour referencer un objet precis dans un script, quelle pratique est simple et courante ?
+A. Declarer une variable serialisee et l'assigner dans l'Inspector
+B. Mettre tous les objets dans Lighting Settings
+C. Modifier le fichier Library manuellement
+D. Changer la resolution du Game View
+
+28. Un script attache a un GameObject ne s'execute pas. Quelle cause est probable ?
+A. Le GameObject ou le composant script est desactive
+B. La scene a une seule lumiere
+C. Le projet contient un dossier Scripts
+D. Le script contient une variable public
+
+29. Une collision physique ne se produit pas entre deux objets qui possedent seulement des Colliders statiques. Pourquoi ?
+A. Il faut souvent un Rigidbody sur au moins un objet pour une interaction dynamique
+B. Les Colliders ne fonctionnent qu'en AR
+C. Unity interdit les collisions 3D
+D. Les objets doivent avoir la meme couleur
+
+30. Un objet saisi en VR traverse d'autres objets pendant qu'on le deplace rapidement. Quelle piste est pertinente ?
+A. Regler la detection de collision du Rigidbody et les parametres d'interaction
+B. Supprimer tous les Colliders
+C. Mettre la scene en 2D
+D. Desactiver la camera VR
+
+31. Pourquoi utiliser des Layers dans Unity ?
+A. Pour filtrer collisions, raycasts et rendu camera
+B. Pour ecrire du code plus vite automatiquement
+C. Pour compresser les sons
+D. Pour creer des builds iOS sans certificat
+
+32. Un Raycast touche un objet qui ne devrait pas etre interactif. Que peut-on utiliser ?
+A. Un LayerMask
+B. Un Audio Listener
+C. Une Lightmap
+D. Une Timeline
+
+33. Un menu principal doit ouvrir la scene du jeu. Quel namespace est necessaire en C# ?
+A. UnityEngine.SceneManagement
+B. System.Audio.VR
+C. UnityEditor.MobileOnly
+D. ARCore.Internal.UI
+
+34. Une erreur indique qu'une classe C# ne correspond pas au nom du fichier. Quelle regle Unity faut-il respecter ?
+A. Le nom de la classe MonoBehaviour doit correspondre au nom du fichier
+B. Le fichier doit toujours s'appeler Main
+C. La classe doit etre en majuscules uniquement
+D. Le fichier doit etre place dans Resources
+
+35. Une application mobile AR a un framerate tres faible. Quelle action est pertinente ?
+A. Reduire la complexite des modeles, textures et effets
+B. Ajouter plus de lumieres temps reel
+C. Augmenter tous les shaders en qualite maximale
+D. Multiplier les objets instances a chaque frame
+
+36. Pourquoi eviter Instantiate() en grande quantite dans Update() ?
+A. Cela peut creer une surcharge memoire et CPU importante
+B. Cela ameliore toujours les performances
+C. Cela desactive automatiquement AR Foundation
+D. Cela empeche les collisions
+
+37. Un objet AR est place plusieurs fois a chaque toucher prolonge. Quelle correction est adaptee ?
+A. Utiliser une condition pour limiter le placement ou detecter un appui unique
+B. Ajouter dix AR Cameras
+C. Remplacer tous les prefabs par des sons
+D. Supprimer la Reference Image Library
+
+38. Un controleur VR ne detecte pas les objets interactifs. Que faut-il verifier ?
+A. Les Interaction Layers entre Interactor et Interactable
+B. Le volume du telephone
+C. La resolution du Project Window
+D. Le nom du package TextMeshPro
+
+39. Une UI VR est visible mais impossible a cliquer avec le rayon. Quel element est generalement necessaire ?
+A. XR UI Input Module et Canvas configure pour l'interaction XR
+B. AR Plane Manager
+C. Terrain Tools
+D. Sprite Atlas uniquement
+
+40. Un objet place en AR disparait quand le tracking est perdu. Quelle explication est la plus probable ?
+A. Le suivi spatial n'est plus fiable, donc Unity ne peut plus maintenir correctement la pose
+B. Le script C# a ete automatiquement supprime
+C. Le telephone n'a plus de materiau par defaut
+D. Le Canvas bloque la lumiere reelle

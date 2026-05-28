@@ -1,0 +1,241 @@
+Questions QCU
+
+1. Dans Unity, quel panneau affiche la liste des objets presents dans la scene ?
+A. Project
+B. Hierarchy
+C. Inspector
+D. Console
+
+2. Qu'est-ce qu'un GameObject dans Unity ?
+A. Un fichier de build Android
+B. Un conteneur pouvant recevoir des composants
+C. Un script C# obligatoire
+D. Une texture 3D
+
+3. Quel composant permet de modifier la position, la rotation et l'echelle d'un objet ?
+A. Rigidbody
+B. Collider
+C. Transform
+D. Animator
+
+4. A quoi sert le panneau Inspector ?
+A. A ecrire du code C#
+B. A modifier les proprietes d'un objet selectionne
+C. A lancer le build Android
+D. A gerer uniquement les lumieres
+
+5. Qu'est-ce qu'un Prefab ?
+A. Une copie reutilisable d'un GameObject configure
+B. Un type de camera VR
+C. Une erreur de compilation
+D. Un fichier audio obligatoire
+
+6. Quel composant est generalement necessaire pour appliquer la physique a un objet ?
+A. Canvas
+B. Rigidbody
+C. Audio Listener
+D. Light Probe
+
+7. Quel composant permet de detecter une collision physique ?
+A. Collider
+B. Canvas Scaler
+C. Animator Controller
+D. Material
+
+8. Que signifie l'option "Is Trigger" sur un Collider ?
+A. L'objet devient invisible
+B. Le Collider detecte les entrees sans bloquer physiquement
+C. Le Rigidbody est desactive
+D. La camera suit automatiquement l'objet
+
+9. Quelle methode Unity est appelee une seule fois au demarrage d'un script actif ?
+A. Update()
+B. FixedUpdate()
+C. Start()
+D. OnGUI()
+
+10. Quelle methode est appelee a chaque frame ?
+A. Awake()
+B. Update()
+C. OnDestroy()
+D. OnTriggerExit()
+
+11. Quelle methode est recommandee pour gerer les calculs lies a la physique ?
+A. FixedUpdate()
+B. LateUpdate()
+C. OnValidate()
+D. Reset()
+
+12. Quel mot-cle rend une variable visible dans l'Inspector si elle est declaree dans un script MonoBehaviour ?
+A. private
+B. static
+C. public
+D. const
+
+13. A quoi sert Debug.Log() ?
+A. A afficher un message dans la Console
+B. A compiler le projet
+C. A exporter une scene
+D. A creer une animation
+
+14. Quelle instruction permet de recuperer un composant attache au meme GameObject ?
+A. GetComponent<T>()
+B. FindScene<T>()
+C. ImportComponent<T>()
+D. LoadCollider<T>()
+
+15. Quel composant permet de gerer les animations d'un GameObject ?
+A. Animator
+B. Rigidbody
+C. Mesh Collider
+D. Canvas
+
+16. Quel objet permet de visualiser la scene pendant l'execution du jeu ?
+A. Light
+B. Camera
+C. Prefab
+D. Tag
+
+17. Quel composant sert a eclairer une scene ?
+A. Audio Source
+B. Light
+C. Collider
+D. Event System
+
+18. Quel systeme Unity est utilise pour creer des menus, boutons et textes a l'ecran ?
+A. UI / Canvas
+B. NavMesh
+C. Physics Material
+D. Terrain Collider
+
+19. Dans Unity UI, quel composant permet de creer un bouton cliquable ?
+A. Button
+B. Rigidbody
+C. Box Collider
+D. XR Origin
+
+20. A quoi sert la fenetre Build Settings ?
+A. A choisir les scenes et la plateforme de compilation
+B. A modifier la couleur du ciel uniquement
+C. A creer un script C#
+D. A importer un modele 3D
+
+21. Dans un projet VR Unity, quel objet represente generalement la position de l'utilisateur ?
+A. XR Origin / Camera Rig
+B. Directional Light
+C. Terrain
+D. Canvas Scaler
+
+22. Que represente le HMD en VR ?
+A. Le casque de realite virtuelle
+B. Le controleur gauche uniquement
+C. Une texture HDR
+D. Une scene mobile
+
+23. Quel package Unity facilite les interactions VR comme saisir, pointer et teleporter ?
+A. XR Interaction Toolkit
+B. TextMeshPro uniquement
+C. Cinemachine uniquement
+D. Tilemap Editor
+
+24. Quel composant permet a un objet d'etre saisi en VR avec XR Interaction Toolkit ?
+A. XR Grab Interactable
+B. AR Plane Manager
+C. Canvas Renderer
+D. Audio Listener
+
+25. Quel composant est utilise pour pointer des objets a distance en VR ?
+A. XR Ray Interactor
+B. Mesh Renderer
+C. Rigidbody 2D
+D. Sprite Renderer
+
+26. Quel systeme permet a l'utilisateur de se deplacer rapidement vers une zone en VR ?
+A. Teleportation
+B. Animation Clip
+C. Occlusion Culling
+D. Lightmapping
+
+27. En VR, quel type de Canvas est souvent utilise pour afficher une interface dans l'espace 3D ?
+A. Screen Space Overlay
+B. World Space
+C. Sprite Mode
+D. Physics Mode
+
+28. Pourquoi faut-il optimiser une application VR ?
+A. Pour maintenir une frequence d'images confortable
+B. Pour supprimer tous les scripts
+C. Pour empecher l'utilisateur de bouger
+D. Pour desactiver les controleurs
+
+29. Quel package Unity permet de developper des applications AR multiplateformes ?
+A. AR Foundation
+B. XR Grab Toolkit
+C. Shader Graph uniquement
+D. Timeline
+
+30. ARCore est principalement associe a quelle plateforme mobile ?
+A. Android
+B. Windows uniquement
+C. Linux uniquement
+D. PlayStation uniquement
+
+31. ARKit est principalement associe a quelle plateforme mobile ?
+A. iOS
+B. Android uniquement
+C. WebGL uniquement
+D. Xbox uniquement
+
+32. Quel composant AR gere la session de suivi et l'etat general de l'AR ?
+A. AR Session
+B. Canvas
+C. Rigidbody
+D. Animator
+
+33. Quel composant est utilise pour detecter les surfaces planes en AR ?
+A. AR Plane Manager
+B. Audio Source
+C. Box Collider
+D. Reflection Probe
+
+34. Quel composant permet d'utiliser la camera du telephone en AR ?
+A. AR Camera
+B. Scene View Camera
+C. Directional Light
+D. Sprite Camera
+
+35. En AR, que permet l'image tracking ?
+A. Reconnaitre une image cible pour afficher du contenu
+B. Compiler le projet
+C. Modifier la gravite
+D. Creer un prefab automatiquement
+
+36. En AR, a quoi sert un AR Raycast ?
+A. A detecter un point sur une surface reelle suivie
+B. A jouer une musique
+C. A desactiver la camera
+D. A importer une texture
+
+37. A quoi sert un Anchor en AR ?
+A. A stabiliser un objet dans le monde reel suivi
+B. A supprimer tous les plans
+C. A creer une lumiere directionnelle
+D. A convertir un script en prefab
+
+38. Dans une application AR mobile, pourquoi faut-il limiter le nombre de polygones ?
+A. Pour ameliorer les performances sur telephone
+B. Pour empecher le tracking
+C. Pour supprimer la camera
+D. Pour desactiver les collisions
+
+39. Si un script C# contient une erreur de syntaxe, que se passe-t-il generalement ?
+A. Unity empeche la compilation correcte des scripts
+B. Unity augmente automatiquement les FPS
+C. La scene est supprimee
+D. Le telephone redemarre
+
+40. Si une scene n'est pas ajoutee dans Build Settings, quel probleme peut apparaitre ?
+A. Elle peut ne pas etre incluse dans l'application finale
+B. Elle devient automatiquement un prefab
+C. Elle perd tous ses materiaux
+D. Elle se transforme en animation

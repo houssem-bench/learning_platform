@@ -1,0 +1,41 @@
+Corrige et explications - Version 1
+B - Le panneau Hierarchy liste les GameObjects de la scene active.
+B - Un GameObject est un conteneur auquel on ajoute des composants.
+C - Transform controle position, rotation et echelle.
+B - Inspector permet d'editer les proprietes de l'objet selectionne.
+A - Un Prefab est un modele reutilisable d'objet configure.
+B - Rigidbody permet a l'objet de participer a la simulation physique.
+A - Les Colliders definissent les formes utilisees pour les collisions.
+B - Un Trigger detecte le passage sans collision bloquante.
+C - Start() est appelee une fois avant la premiere Update().
+B - Update() est executee a chaque frame.
+A - FixedUpdate() suit le pas fixe de la physique Unity.
+C - Une variable public est visible dans l'Inspector.
+A - Debug.Log() ecrit un message dans la Console.
+A - GetComponent<T>() recupere un composant du GameObject.
+A - Animator controle les etats et transitions d'animation.
+B - La Camera rend l'image visible par le joueur.
+B - Les composants Light eclairent la scene.
+A - Canvas est la base du systeme UI Unity.
+A - Button permet de declencher une action UI.
+A - Build Settings configure plateformes et scenes incluses.
+A - XR Origin represente le rig joueur en XR.
+A - HMD signifie Head-Mounted Display, donc casque VR.
+A - XR Interaction Toolkit fournit les composants d'interaction VR.
+A - XR Grab Interactable rend un objet saisissable.
+A - XR Ray Interactor sert a pointer/interagir a distance.
+A - La teleportation est un deplacement courant en VR.
+B - World Space place l'interface dans l'espace 3D.
+A - Un bon framerate limite l'inconfort en VR.
+A - AR Foundation abstrait ARCore et ARKit.
+A - ARCore est la solution AR de Google pour Android.
+A - ARKit est la solution AR d'Apple pour iOS.
+A - AR Session gere le cycle de vie AR.
+A - AR Plane Manager detecte les plans suivis.
+A - AR Camera combine camera reelle et rendu virtuel.
+A - Image tracking reconnait des images de reference.
+A - AR Raycast trouve des points sur surfaces detectees.
+A - Un Anchor aide a maintenir la stabilite spatiale.
+A - Moins de polygones reduit la charge GPU mobile.
+A - Une erreur C# bloque la compilation des scripts.
+A - Une scene non incluse peut manquer dans le build.

@@ -1,0 +1,41 @@
+Corrige et explications - Version 3
+A - Les allocations repetees provoquent du garbage collection et des saccades.
+A - Instancier sans controle cree trop d'objets et surcharge le systeme.
+A - Le tremblement vient souvent d'un conflit entre interaction et physique.
+A - MovePosition/MoveRotation ou une configuration XR adaptee respectent mieux la physique.
+A - Les Anchors ameliorent la stabilite mais dependent toujours du tracking.
+A - En Unity, 1 unite correspond generalement a 1 metre en XR/AR.
+A - Les Interaction Layers filtrent precisement les interactions autorisees.
+A - Une UI VR lisible doit etre confortable spatialement et visuellement.
+A - Separer menu, VR et AR rend le projet plus maintenable.
+A - AR Tracked Image Manager suit les images et leur etat.
+A - Separer placement et manipulation evite une logique monolithique fragile.
+A - Les Mesh Colliders complexes sont couteux pour la physique dynamique.
+A - Ces techniques optimisent rendu et eclairage des objets statiques.
+A - La locomotion doit gerer les collisions du rig joueur.
+A - FindObjectOfType() repete est couteux et peu robuste.
+A - Les references et evenements reduisent les recherches fragiles.
+A - Un Anchor maintient mieux la coherence spatiale AR.
+A - Le Profiler permet d'identifier precisement le cout des interactions.
+A - Les parametres Android/XR conditionnent la reussite du build ARCore.
+A - Les shaders mobiles doivent respecter des contraintes GPU strictes.
+A - Les evenements XR evitent une boucle Update inutile.
+A - Sauvegarder la pose initiale permet de restaurer proprement l'objet.
+A - LayerMasks et Colliders empechent des selections non voulues.
+A - L'occlusion AR depend du support depth de l'appareil.
+A - Une mauvaise orientation vient souvent des axes, pivots ou offsets.
+A - Plusieurs cameras peuvent causer un rendu incoherent.
+A - Rigidbody et mode de mouvement XR determinent la stabilite de manipulation.
+A - Le baking evite de recalculer certaines lumieres en temps reel.
+A - Tous les appareils Android ne sont pas compatibles ARCore.
+A - Les evenements limitent le couplage entre scripts.
+A - WaitForSecondsRealtime ignore Time.timeScale.
+A - DontDestroyOnLoad peut conserver un objet entre scenes, avec gestion controlee.
+A - Le tracking XR doit rester fluide meme si le gameplay est en pause.
+A - Les bugs mobiles doivent etre diagnostiques sur appareil reel avec logs.
+A - Ne pas se desabonner peut provoquer des appels multiples ou references persistantes.
+A - OnDisable() est l'endroit courant pour retirer les abonnements.
+A - Il faut eviter qu'un toucher UI declenche aussi un raycast AR.
+A - Le retour haptique doit etre lie a l'evenement d'interaction.
+A - Les visualiseurs de plans sont utiles en debug mais genants en production.
+A - La separation des responsabilites ameliore la maintenance et l'evolution.

@@ -1,0 +1,241 @@
+Questions QCU
+
+1. Dans une scene VR, les performances chutent fortement apres plusieurs minutes. Le Profiler montre beaucoup d'allocations GC dans Update(). Quelle correction est la plus pertinente ?
+A. Eviter les allocations repetees et reutiliser les objets/collections
+B. Ajouter plus de lights temps reel
+C. Augmenter la resolution des textures
+D. Remplacer tous les Colliders par Mesh Colliders convexes
+
+2. Un systeme AR instancie un prefab a chaque frame tant qu'un plan est detecte. Quel probleme architectural cela cree-t-il ?
+A. Une explosion d'objets et une surcharge memoire/performance
+B. Une amelioration automatique du tracking
+C. Une suppression des Anchors existants
+D. Une conversion automatique en Prefab Variant
+
+3. En VR, un objet saisi tremble fortement lorsqu'il est tenu pres d'autres objets physiques. Quelle cause est plausible ?
+A. Conflit entre mouvement impose par l'interaction et resolution physique des collisions
+B. Absence de Canvas Scaler
+C. Mauvaise Reference Image Library
+D. Trop peu de scenes dans Build Settings
+
+4. Pour deplacer un Rigidbody tenu en VR tout en respectant mieux la physique, quelle approche est souvent preferable ?
+A. Utiliser des methodes physiques comme MovePosition/MoveRotation ou une configuration XR adaptee
+B. Modifier transform.position brutalement dans Update() uniquement
+C. Supprimer tous les Colliders
+D. Desactiver FixedUpdate() dans le projet
+
+5. Une application AR presente une derive progressive des objets meme avec des Anchors. Quelle explication est la plus realiste ?
+A. Le tracking depend de la qualite visuelle de l'environnement et peut etre instable
+B. Les Anchors garantissent une stabilite mathematique absolue
+C. La derive vient uniquement du Canvas
+D. AR Foundation interdit les objets 3D persistants
+
+6. En AR mobile, l'objet apparait correctement mais son echelle semble irrealiste par rapport au monde reel. Quelle notion faut-il verifier ?
+A. L'unite Unity correspond generalement au metre
+B. Unity utilise toujours le centimetre comme unite AR
+C. L'echelle depend uniquement du materiau
+D. ARCore convertit automatiquement tous les modeles a la bonne taille
+
+7. Un objet VR doit etre interactif uniquement avec la main droite, pas avec le rayon gauche. Quelle solution est la plus propre ?
+A. Configurer les Interaction Layers des Interactors et Interactables
+B. Supprimer la camera gauche
+C. Renommer le GameObject en RightOnly
+D. Modifier la couleur du controleur droit
+
+8. Une UI VR en World Space est difficile a lire et provoque de la fatigue. Quelle amelioration UX est la plus pertinente ?
+A. Ajuster distance, taille, contraste et orientation vers l'utilisateur
+B. Reduire le framerate a 30 FPS
+C. Placer l'UI derriere le joueur
+D. Utiliser uniquement une UI Screen Space Overlay
+
+9. Un projet utilise plusieurs scenes : menu, VR, AR. Quelle strategie ameliore la maintenabilite ?
+A. Separer les responsabilites et centraliser la navigation de scenes
+B. Mettre tout le contenu dans une seule scene sans organisation
+C. Dupliquer tous les scripts dans chaque scene
+D. Eviter completement les Prefabs
+
+10. Un objet AR doit rester associe a une image suivie et disparaitre quand l'image n'est plus suivie. Quel systeme est le plus approprie ?
+A. AR Tracked Image Manager avec gestion de l'etat de tracking
+B. Teleportation Provider
+C. XR Direct Interactor
+D. NavMesh Surface
+
+11. Une application AR doit placer un objet une seule fois sur un plan, puis permettre sa rotation tactile. Quelle architecture est preferable ?
+A. Separer le script de placement initial du script de manipulation
+B. Tout faire dans Update() sans etat interne
+C. Instancier un nouvel objet a chaque rotation
+D. Utiliser un Rigidbody obligatoire pour chaque toucher
+
+12. Une scene VR utilise beaucoup de Mesh Colliders complexes sur des objets dynamiques. Quel risque principal apparait ?
+A. Cout physique eleve et instabilite potentielle
+B. Meilleure performance automatique
+C. Desactivation de l'Animator
+D. Impossibilite d'utiliser des Materials
+
+13. Pour optimiser des objets statiques dans une scene Unity, quelle combinaison est pertinente ?
+A. Static batching, occlusion culling et light baking selon le cas
+B. Rigidbody dynamique sur tous les murs
+C. Instanciation continue dans Update()
+D. Desactivation de tous les Colliders sans analyse
+
+14. Un utilisateur VR peut traverser certains murs lors d'un deplacement locomotion fluide. Quelle cause est probable ?
+A. Le systeme de locomotion ne gere pas correctement les collisions du joueur
+B. Le Canvas est trop petit
+C. ARKit est desactive
+D. Le materiau du mur est trop clair
+
+15. Un script utilise FindObjectOfType() frequemment dans Update(). Quel probleme cela pose-t-il ?
+A. Recherche couteuse repetee et dependance fragile
+B. Securite accrue du code
+C. Compilation plus rapide
+D. Meilleur rendu GPU
+
+16. Quelle pratique est plus robuste que de chercher un objet par son nom a chaque interaction ?
+A. Utiliser des references serialisees, evenements ou injection de dependances simple
+B. Utiliser GameObject.Find() dans chaque frame
+C. Changer le nom des objets dynamiquement
+D. Supprimer les scripts d'interaction
+
+17. Un objet AR place sur un plan doit rester coherent quand le plan est mis a jour par AR Foundation. Quelle approche est adaptee ?
+A. Utiliser un Anchor plutot qu'une simple position monde calculee une fois
+B. Desactiver AR Session apres placement
+C. Remplacer l'AR Camera par une Camera classique
+D. Supprimer AR Plane Manager immediatement avant le raycast
+
+18. Une application VR presente des saccades uniquement lorsque de nombreux objets sont saisis et relaches. Quelle analyse est prioritaire ?
+A. Profiler la physique, les allocations et les instanciations lors des interactions
+B. Changer uniquement la couleur du ciel
+C. Augmenter le volume audio
+D. Supprimer le menu principal
+
+19. Dans un projet AR, le build Android echoue a cause de parametres incompatibles. Quel element est souvent critique ?
+A. Version minimale Android, backend XR et support ARCore configures correctement
+B. Nombre de Canvas dans la scene
+C. Nom exact du prefab principal
+D. Presence d'un Audio Reverb Zone
+
+20. Pour une application AR mobile, pourquoi faut-il faire attention aux shaders utilises ?
+A. Certains shaders sont trop couteux ou incompatibles avec les contraintes mobiles
+B. Les shaders empechent toujours la detection de plans
+C. AR Foundation interdit tous les shaders personnalises
+D. Les shaders remplacent les scripts C#
+
+21. Une interaction VR doit declencher un evenement quand l'objet est saisi, sans ecrire de logique dans Update(). Quel mecanisme est preferable ?
+A. Utiliser les evenements de XR Grab Interactable, comme select entered
+B. Lire le clavier a chaque frame
+C. Instancier un Canvas invisible
+D. Detecter la lumiere ambiante
+
+22. Un objet doit revenir a sa position initiale apres avoir ete relache en VR. Quelle solution est propre ?
+A. Memoriser la pose initiale puis reinitialiser lors de l'evenement de release
+B. Recharger toute l'application
+C. Supprimer l'objet et ne jamais le recreer
+D. Modifier uniquement la couleur du materiau
+
+23. Un ray interacteur VR selectionne des objets derriere un mur. Quelle correction est appropriee ?
+A. Configurer les LayerMasks et les Colliders bloquants du rayon
+B. Ajouter AR Plane Manager
+C. Mettre l'UI en Screen Space Overlay
+D. Desactiver tous les scripts C#
+
+24. En AR, l'occlusion entre objet virtuel et monde reel est demandee. Quelle fonctionnalite peut etre necessaire selon l'appareil ?
+A. Depth/occlusion AR, si supportee par ARCore/ARKit et AR Foundation
+B. XR Grab Interactable
+C. Teleportation Area
+D. Animator seulement
+
+25. Un objet AR apparait devant une image suivie mais avec une orientation incorrecte. Que faut-il verifier ?
+A. Les axes du prefab, le pivot et la transformation relative a l'image trackee
+B. Le volume du son
+C. La taille de la Console
+D. Le nom de la scene dans Project
+
+26. Une scene VR utilise une camera classique en plus de l'XR Camera. Quel probleme peut survenir ?
+A. Conflit de rendu ou affichage depuis la mauvaise camera
+B. Meilleure immersion automatique
+C. Suppression des Controllers
+D. Activation automatique d'ARKit
+
+27. Un objet interactif VR contient un Rigidbody non kinematic et doit etre manipule sans comportement chaotique. Quel reglage doit etre analyse ?
+A. Le mode de mouvement de XR Grab Interactable et la configuration Rigidbody
+B. Le format PNG des icones
+C. La taille du dossier Assets
+D. Le nom du projet Unity Hub
+
+28. Pourquoi le light baking peut-il ameliorer les performances dans une scene VR ?
+A. Il reduit le cout des lumieres calculees en temps reel
+B. Il augmente le nombre de calculs physiques
+C. Il rend tous les objets dynamiques
+D. Il remplace l'XR Interaction Toolkit
+
+29. Une application AR doit fonctionner sur plusieurs appareils Android, mais certains ne supportent pas ARCore. Quelle decision est correcte ?
+A. Gerer la compatibilite appareil et prevoir un message ou comportement alternatif
+B. Supposer que tous les Android supportent ARCore
+C. Desactiver la permission camera
+D. Compiler uniquement en WebGL
+
+30. Dans une architecture Unity, pourquoi utiliser des evenements plutot que des dependances directes fortes entre scripts ?
+A. Pour reduire le couplage et faciliter la maintenance
+B. Pour supprimer la necessite de tester
+C. Pour empecher les Prefabs
+D. Pour ameliorer uniquement la qualite audio
+
+31. Une coroutine attend WaitForSeconds(2), mais le delai est affecte par Time.timeScale. Quelle alternative ignore le timeScale ?
+A. WaitForSecondsRealtime
+B. FixedUpdateOnly
+C. LateStartCoroutine
+D. Debug.Wait
+
+32. Un objet AR est place correctement, mais apres changement de scene il disparait alors qu'il doit persister. Quelle solution peut etre utilisee avec prudence ?
+A. DontDestroyOnLoad et gestion propre de l'etat AR
+B. Supprimer AR Session
+C. Desactiver tous les Managers
+D. Remplacer le prefab par une texture
+
+33. Dans un projet VR, un menu pause doit arreter la logique du jeu sans casser le tracking de la tete. Quelle precaution est importante ?
+A. Ne pas bloquer le rendu/tracking XR ; controler separement la logique de gameplay
+B. Mettre Time.timeScale a -1
+C. Desactiver l'XR Origin entierement
+D. Supprimer la camera principale
+
+34. Une erreur survient seulement dans le build mobile AR, pas dans l'editeur. Quelle methode de diagnostic est la plus appropriee ?
+A. Utiliser les logs du peripherique et tester sur appareil reel
+B. Lire uniquement la Scene View
+C. Changer le theme de Unity Editor
+D. Supprimer tous les packages AR
+
+35. Un script abonne une methode a un evenement dans OnEnable(), mais ne la desabonne jamais. Quel risque existe ?
+A. Appels multiples, references persistantes ou comportements inattendus
+B. Amelioration automatique de la memoire
+C. Suppression du Rigidbody
+D. Compilation plus stricte
+
+36. Pour eviter les problemes precedents, ou desabonner generalement l'evenement ?
+A. OnDisable()
+B. Update() a chaque frame
+C. Dans le constructeur uniquement
+D. Dans le fichier ProjectSettings.asset manuellement
+
+37. Une interaction AR par toucher selectionne parfois l'UI au lieu de placer un objet. Quelle verification est pertinente ?
+A. Tester si le toucher est au-dessus d'un element UI avant le raycast AR
+B. Augmenter la gravite
+C. Desactiver l'AR Camera
+D. Ajouter un Rigidbody au Canvas
+
+38. Un objet VR doit produire un retour haptique lors de la saisie. Ou integrer proprement ce comportement ?
+A. Dans l'evenement de selection de l'interactor/interactable compatible
+B. Dans la Directional Light
+C. Dans AR Plane Manager
+D. Dans Build Settings uniquement
+
+39. Une scene AR a des plans visuels de debug visibles dans l'application finale. Quelle action est recommandee ?
+A. Desactiver ou masquer les visualiseurs de plans apres placement ou en production
+B. Augmenter leur opacite
+C. Convertir les plans en Audio Sources
+D. Mettre tous les plans en Rigidbody dynamique
+
+40. Un professeur demande pourquoi separer scripts de gestion AR, scripts UI et scripts d'interaction. Quelle reponse est la meilleure ?
+A. Pour respecter la separation des responsabilites et faciliter tests, maintenance et evolution
+B. Parce que Unity interdit les scripts longs
+C. Pour que le build soit automatiquement plus petit
+D. Pour supprimer les erreurs de syntaxe automatiquement
