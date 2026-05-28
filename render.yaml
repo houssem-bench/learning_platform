@@ -2,6 +2,7 @@ services:
   - type: web
     name: learning-platform-api
     env: python
+    plan: free
     buildCommand: pip install -r backend/requirements.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
@@ -16,14 +17,11 @@ services:
         value: admin123
       - key: CORS_ORIGINS
         value: http://localhost:5173,https://learning-platform-frontend.onrender.com
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
 
   - type: web
     name: learning-platform-frontend
     runtime: static
+    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
