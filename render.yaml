@@ -3,7 +3,7 @@ services:
     name: learning-platform-api
     env: python
     plan: free
-    buildCommand: pip install -r backend/requirements.txt && cd frontend && npm install && npm run build && cd .. && rm -rf backend/static && mkdir -p backend/static && cp -r frontend/dist/* backend/static/
+    buildCommand: pip install -r backend/requirements.txt && cd frontend && npm install && node ./node_modules/vite/bin/vite.js build && cd .. && rm -rf backend/static && mkdir -p backend/static && cp -r frontend/dist/* backend/static/
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
     envVars:
