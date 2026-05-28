@@ -1,0 +1,41 @@
+Corrige et explications - Version 4
+A - Awake() peut preceder le Start() d'autres scripts.
+A - Le trigger 3D recoit un Collider.
+A - Un Collider en trigger declenche les callbacks OnTrigger...
+A - Les controleurs XR dependent des actions d'entree activees.
+A - Physics Layers et Interaction Layers sont deux filtres differents.
+A - La detection continue limite le tunneling.
+A - Deplacer directement le Transform peut court-circuiter la physique.
+A - Les overrides locaux peuvent masquer le prefab parent.
+A - En chargement additif, la scene active influence les creations.
+A - Sans garde anti-doublon, un manager persistant peut se multiplier.
+A - Les coroutines liees a un MonoBehaviour peuvent s'arreter avec lui.
+A - [SerializeField] expose un champ prive dans l'Inspector.
+A - Les scenes de build peuvent avoir des references differentes.
+A - L'UI XR necessite un raycaster/module compatible tracked device.
+A - Le module d'entree doit etre compatible XR.
+A - L'orientation de l'Attach Transform controle la pose de saisie.
+A - Le point d'attache influence la position de l'objet tenu.
+A - Les Interaction Layers peuvent empecher la selection.
+A - La distance du rayon determine sa portee.
+A - Le pooling evite les couts repetes d'instanciation/destruction.
+A - Un TrackableType trop large peut produire un point moins precis.
+A - Un Anchor ameliore la stabilite spatiale.
+A - La taille physique influence l'echelle en image tracking.
+A - Une image peu distinctive se suit mal.
+A - Il faut reagir a l'etat de tracking.
+A - Camera et configuration XR sont critiques en AR mobile.
+A - La compatibilite ARCore depend de l'appareil.
+A - Un Anchor local n'est pas automatiquement persistant entre sessions.
+A - Les plans AR sont raffines pendant le tracking.
+A - Les visualiseurs de debug nuisent a l'experience finale.
+A - GameObject.Find() repete est couteux et fragile.
+A - Le nom du parametre et la transition doivent correspondre.
+A - Une transition inverse peut annuler l'etat.
+A - Il ne doit generalement y avoir qu'un Audio Listener actif.
+A - Le casque autonome est plus limite qu'un PC.
+A - Les ombres dynamiques sont couteuses.
+A - Des abonnements multiples produisent plusieurs appels.
+A - OnDisable() est le complement logique de OnEnable().
+A - Un singleton persistant controle evite les doublons.
+A - Le niveau difficile vient des interactions entre sous-systemes.

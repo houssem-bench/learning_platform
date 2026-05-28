@@ -28,6 +28,8 @@ class AttemptSubmitIn(BaseModel):
 
 class ExplanationOut(BaseModel):
     question_id: int
+    stem: str
+    options: List[str]
     selected_index: Optional[int]
     correct_index: int
     correct_text: str

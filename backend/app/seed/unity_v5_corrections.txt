@@ -1,0 +1,41 @@
+Corrige et explications - Version 5
+A - Awake() sert souvent a initialiser les references propres a l'objet.
+A - Start() est plus sur si d'autres objets doivent finir leur Awake().
+A - Start() attend la premiere activation de l'objet/script.
+A - FixedUpdate() suit le pas fixe de la physique.
+A - LateUpdate() suit les mouvements deja effectues dans Update().
+A - OnCollisionEnter utilise Collision.
+A - OnTriggerEnter utilise Collider.
+A - Un Rigidbody est generalement necessaire pour generer les evenements trigger.
+A - Use Gravity controle l'effet de la gravite.
+A - Is Kinematic permet un controle scripte sans dynamique classique.
+A - Il faut traiter rigidbody, collision detection et interaction ensemble.
+A - Voir un objet ne signifie pas pouvoir le selectionner.
+A - Il faut aussi un interactor actif et compatible.
+A - Les filtres XR evitent les selections non voulues.
+A - L'Attach Transform influence la rotation tenue.
+A - Une UI VR doit suivre une logique spatiale confortable.
+A - Trop proche, une UI VR devient fatigante.
+A - Le deplacement fluide rapide peut provoquer de la cinetose.
+A - Le filtrage des resultats AR Raycast est essentiel.
+A - PlaneWithinPolygon limite au polygone detecte du plan.
+A - Un Anchor stabilise mieux la pose AR.
+A - Orientation et pivot determinent l'alignement sur l'image.
+A - Les reflets et variations lumineuses perturbent le tracking.
+A - La taille physique influence l'echelle du contenu.
+A - Il faut gerer explicitement les appareils non compatibles.
+A - ARM64 est souvent requis pour les builds Android modernes AR.
+A - Unity Remote ne remplace pas un build reel AR.
+A - Il manque une gestion d'etat anti-duplication.
+A - Il faut eviter que l'UI declenche aussi une action AR.
+A - Trop de responsabilites rendent le code fragile.
+A - La separation ameliore maintenance et evolutivite.
+A - ScriptableObject centralise des donnees reutilisables.
+A - Modifier un asset en Play Mode peut laisser des changements.
+A - Les statiques peuvent survivre aux changements de scene.
+A - Le temps physique doit etre utilise avec precision.
+A - Les Quaternions evitent certains pieges des angles d'Euler.
+A - Parent/enfant implique souvent une confusion local/world.
+A - Les erreurs de build mobile se diagnostiquent sur appareil.
+A - Le Profiler evite l'optimisation a l'aveugle.
+A - En QCU difficile, la meilleure reponse est la plus specifique au scenario.

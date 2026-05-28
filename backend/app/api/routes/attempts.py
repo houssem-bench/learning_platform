@@ -18,6 +18,12 @@ from app.schemas.attempt import (
 router = APIRouter(prefix="/attempts", tags=["attempts"])
 
 
+def to_utc_aware(value: datetime) -> datetime:
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
+
+
 @router.get("/{attempt_id}", response_model=AttemptResumeOut)
 def get_attempt(
     attempt_id: int,
@@ -40,7 +46,8 @@ def get_attempt(
         )
 
     now = datetime.now(timezone.utc)
-    elapsed = (now - attempt.started_at).total_seconds()
+    started_at = to_utc_aware(attempt.started_at)
+    elapsed = (now - started_at).total_seconds()
     remaining = max(int(attempt.time_limit_seconds - elapsed), 0)
 
     questions = (
@@ -95,7 +102,8 @@ def submit_attempt(
         )
 
     now = datetime.now(timezone.utc)
-    elapsed = (now - attempt.started_at).total_seconds()
+    started_at = to_utc_aware(attempt.started_at)
+    elapsed = (now - started_at).total_seconds()
     timed_out = elapsed > attempt.time_limit_seconds
 
     answers = payload.answers or {}
@@ -110,6 +118,7 @@ def submit_attempt(
         option_order = attempt.option_orders.get(
             str(question_id), list(range(len(question.options)))
         )
+        display_options = [question.options[i] for i in option_order]
         selected_display_index = answers.get(str(question_id))
         is_correct = False
         if selected_display_index is not None and 0 <= selected_display_index < len(
@@ -126,9 +135,11 @@ def submit_attempt(
         explanations.append(
             ExplanationOut(
                 question_id=question_id,
+                stem=question.stem,
+                options=display_options,
                 selected_index=selected_display_index,
                 correct_index=correct_display_index,
-                correct_text=question.options[question.correct_index],
+                correct_text=display_options[correct_display_index],
                 explanation=question.explanation,
                 is_correct=is_correct,
             )

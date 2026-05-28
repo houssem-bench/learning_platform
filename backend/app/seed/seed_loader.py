@@ -37,6 +37,22 @@ QUIZ_SOURCES = [
         "questions_file": "unity_v3_questions.txt",
         "corrections_file": "unity_v3_corrections.txt",
     },
+    {
+        "slug": "unity-qcu-v4",
+        "title": "Unity QCU - Version 4 (Extra Hard)",
+        "description": "Expert Unity, XR, and lifecycle troubleshooting.",
+        "time_limit_seconds": 2700,
+        "questions_file": "unity_v4_questions.txt",
+        "corrections_file": "unity_v4_corrections.txt",
+    },
+    {
+        "slug": "unity-qcu-v5",
+        "title": "Unity QCU - Version 5 (Extra Hard - Trap)",
+        "description": "Advanced VR/AR pitfalls and architecture traps.",
+        "time_limit_seconds": 2700,
+        "questions_file": "unity_v5_questions.txt",
+        "corrections_file": "unity_v5_corrections.txt",
+    },
 ]
 
 

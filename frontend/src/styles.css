@@ -149,6 +149,25 @@ input, select, textarea {
   margin: 8px 0;
 }
 
+.option-result {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.option-result.correct {
+  border-color: #2b7a4b;
+  background: #e7f6ec;
+  color: #1f5b38;
+}
+
+.option-result.wrong {
+  border-color: #b14a3b;
+  background: #fdecea;
+  color: #7d2e23;
+}
+
 .timer {
   display: inline-flex;
   align-items: center;

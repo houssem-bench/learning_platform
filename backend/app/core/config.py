@@ -6,7 +6,6 @@ class Settings(BaseSettings):
     secret_key: str = "change-me"
     access_token_expire_minutes: int = 60
     database_url: str = "sqlite:///./app.db"
-    cors_origins: str = "http://localhost:5173"
     admin_username: str = "admin"
     admin_password: str = "admin123"
 

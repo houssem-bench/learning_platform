@@ -1,0 +1,568 @@
+Version 4 — EXTRA HARD
+Questions QCU
+
+1. Un script A récupère une référence initialisée dans Start() d’un script B, mais A l’utilise dans Awake(). Quelle est l’erreur conceptuelle ?
+A. Awake() peut s’exécuter avant le Start() de l’autre script
+B. Start() est toujours appelé avant tous les Awake()
+C. Awake() ne s’exécute jamais sur les MonoBehaviour
+D. Start() est réservé uniquement aux scripts AR
+
+2. Quelle signature est correcte pour détecter l’entrée dans un trigger 3D ?
+A. void OnTriggerEnter(Collider other)
+B. void OnTriggerEnter(Collision other)
+C. void OnTriggerEnter2D(Collider other)
+D. void TriggerEnter(Collider other)
+
+3. Deux objets possèdent des Colliders, mais l’un est en Is Trigger. Quelle méthode est adaptée ?
+A. OnTriggerEnter(Collider other)
+B. OnCollisionEnter(Collider other)
+C. OnCollisionEnter(Trigger other)
+D. OnRigidbodyEnter(Collider other)
+
+4. Un objet VR est saisissable dans l’éditeur avec la souris simulée, mais pas avec les contrôleurs réels. Quel élément faut-il suspecter en premier ?
+A. La configuration des Input Actions XR et leur activation
+B. Le nom du dossier Assets
+C. Le nombre de matériaux dans la scène
+D. La présence d’une Directional Light
+
+5. Dans XR Interaction Toolkit, quelle différence est correcte ?
+A. Les Physics Layers filtrent la physique, les Interaction Layers filtrent les interactions XR
+B. Les Interaction Layers remplacent toujours les Colliders
+C. Les Physics Layers ne servent qu’à l’AR
+D. Les Interaction Layers changent automatiquement la gravité
+
+6. Un objet VR traverse parfois une table lorsqu’il est déplacé rapidement. Quelle configuration peut réduire le problème ?
+A. Collision Detection en Continuous Dynamic ou Continuous selon le cas
+B. Désactiver tous les Colliders de la table
+C. Mettre le Rigidbody en Static
+D. Supprimer le XR Grab Interactable
+
+7. Pourquoi déplacer un Rigidbody avec transform.position dans Update() peut être problématique ?
+A. Cela peut contourner la simulation physique et créer des collisions incohérentes
+B. Cela rend automatiquement l’objet plus stable
+C. Cela active le moteur ARCore
+D. Cela force Unity à utiliser le Canvas
+
+8. Un prefab possède une modification locale dans une scène. Après mise à jour du prefab parent, le comportement devient incohérent. Quel point faut-il examiner ?
+A. Les overrides locaux du prefab ou du prefab variant
+B. La couleur de fond de la Scene View
+C. Le nom du projet Unity Hub
+D. La résolution du Game View uniquement
+
+9. Une scène est chargée en mode Additive, mais les nouveaux objets instanciés apparaissent dans une autre scène que prévu. Quelle notion est pertinente ?
+A. La scène active utilisée pour les nouvelles instanciations
+B. Le niveau de volume audio
+C. Le mode de compression des textures uniquement
+D. Le nom du fichier .cs principal
+
+10. Un manager marqué DontDestroyOnLoad se duplique après retour au menu. Quelle est la cause probable ?
+A. Une nouvelle instance est recréée sans contrôle de singleton ou de doublon
+B. DontDestroyOnLoad détruit automatiquement les anciens objets
+C. Unity interdit les managers persistants
+D. Le problème vient forcément d’un Collider absent
+
+11. Une coroutine lancée depuis un MonoBehaviour s’arrête quand le GameObject est désactivé. Quelle affirmation est la plus correcte ?
+A. Les coroutines associées à ce MonoBehaviour peuvent être arrêtées lors de sa désactivation/destruction
+B. Les coroutines continuent toujours, même si l’objet est détruit
+C. Les coroutines ne fonctionnent qu’en AR
+D. Les coroutines remplacent Update() dans tous les cas
+
+12. Une variable private doit être visible dans l’Inspector sans devenir publique. Quelle écriture est correcte ?
+A. [SerializeField] private GameObject target;
+B. [PublicField] private GameObject target;
+C. [Inspector] private GameObject target;
+D. [Show] private GameObject target;
+
+13. Un NullReferenceException apparaît uniquement dans le build, pas dans l’éditeur. Quelle hypothèse est crédible ?
+A. Une référence assignée dans une scène de test n’est pas assignée dans la scène incluse au build
+B. Unity ignore toujours les références dans les builds
+C. Les variables publiques deviennent privées en build
+D. Les Prefabs sont supprimés automatiquement
+
+14. Une UI VR en World Space est visible mais le rayon XR ne clique pas les boutons. Quel composant est souvent nécessaire ?
+A. Tracked Device Graphic Raycaster ou module UI XR compatible
+B. AR Plane Manager
+C. Mesh Collider sur la caméra
+D. Light Probe Group sur le bouton
+
+15. Un bouton UI fonctionne avec la souris mais pas avec les contrôleurs VR. Quel piège est fréquent ?
+A. L’EventSystem utilise un module d’entrée non compatible XR
+B. Le Canvas est trop lumineux
+C. La scène contient un Rigidbody
+D. Le bouton n’a pas de texture normale map
+
+16. En VR, un objet attaché à la main apparaît avec une rotation étrange au moment de la saisie. Quelle cause est probable ?
+A. Le point d’attache ou l’Attach Transform est mal orienté
+B. Le projet contient trop de scripts
+C. Le Canvas n’est pas en Overlay
+D. ARCore est absent
+
+17. Un objet avec XR Grab Interactable est attiré vers une position incorrecte lors de la saisie. Quel réglage est le plus pertinent ?
+A. Attach Transform et Match Attach Position/Rotation
+B. Build Index de la scène
+C. Reference Image Library
+D. Culling Mask de la caméra AR
+
+18. Une Socket XR n’accepte pas un objet pourtant saisissable. Que vérifier en priorité ?
+A. Les Interaction Layers et les filtres de sélection
+B. La résolution de l’écran
+C. Le volume de l’Audio Listener
+D. La couleur du prefab
+
+19. Un Ray Interactor sélectionne un objet trop éloigné malgré la logique prévue. Quel paramètre est directement concerné ?
+A. Max Raycast Distance ou configuration du Ray Interactor
+B. Fixed Timestep uniquement
+C. Nom du GameObject
+D. Version du fichier PNG
+
+20. Une application VR subit des saccades lors de l’apparition de nombreux objets. Quelle stratégie est la plus adaptée ?
+A. Object pooling au lieu d’instanciations/destructions répétées
+B. Ajouter plus de scripts dans Update()
+C. Augmenter la résolution des ombres
+D. Utiliser plus de Mesh Colliders dynamiques
+
+21. En AR, un objet est placé légèrement à côté de la surface touchée. Quel choix de TrackableType peut être en cause ?
+A. Utiliser un type trop large au lieu de PlaneWithinPolygon
+B. Utiliser un Canvas en World Space
+C. Utiliser un Rigidbody kinematic
+D. Utiliser une Coroutine
+
+22. Un objet AR est instancié sur un plan mais ne suit pas correctement l’évolution du tracking. Quelle amélioration est pertinente ?
+A. L’associer à un ARAnchor lorsque la stabilité spatiale est importante
+B. Le rendre enfant de la Directional Light
+C. Le déplacer dans LateUpdate() sans raycast
+D. Supprimer tous les AR Managers
+
+23. En AR image tracking, l’objet apparaît à la bonne position mais avec une taille incorrecte. Quel paramètre est souvent oublié ?
+A. La taille physique de l’image de référence
+B. Le nom de la scène active
+C. Le Fixed Timestep
+D. L’intensité de la lumière directionnelle
+
+24. Une image suivie est détectée, puis perdue dès que l’utilisateur bouge un peu. Quelle cause est réaliste ?
+A. Image de référence peu distinctive, floue, brillante ou mal éclairée
+B. Absence de Rigidbody sur l’image réelle
+C. Trop de boutons UI
+D. Trop peu de scripts C#
+
+25. Un objet AR doit être masqué lorsque l’image cible n’est plus suivie. Quelle logique est correcte ?
+A. Lire l’état de tracking de l’image suivie et activer/désactiver le contenu
+B. Détruire AR Session à chaque perte de tracking
+C. Changer uniquement la couleur du matériau
+D. Recompiler l’application à chaque détection
+
+26. Une app AR Android affiche un écran noir au lancement. Quelle cause est crédible ?
+A. Permission caméra ou configuration ARCore/XR incorrecte
+B. Trop de Prefabs dans Project
+C. Absence de Rigidbody sur le Canvas
+D. Mauvaise couleur du skybox
+
+27. L’application AR fonctionne sur certains Android mais pas sur d’autres. Quelle explication est correcte ?
+A. Tous les appareils Android ne sont pas compatibles ARCore
+B. ARCore fonctionne sur tous les Android sans exception
+C. AR Foundation remplace le capteur caméra
+D. Les appareils incompatibles deviennent automatiquement compatibles en build release
+
+28. Un objet AR placé dans le monde réel disparaît après relancement de l’application. Quelle affirmation est correcte ?
+A. Un Anchor local ne garantit pas une persistance entre sessions sans système de persistance adapté
+B. Tous les Anchors sont automatiquement sauvegardés pour toujours
+C. AR Foundation sauvegarde automatiquement chaque prefab dans le cloud
+D. Le problème vient forcément du Canvas
+
+29. Pourquoi ne faut-il pas supposer qu’un plan AR détecté est immédiatement stable ?
+A. AR Foundation peut raffiner ou modifier les plans au fil du tracking
+B. Les plans AR sont toujours définitifs dès la première frame
+C. Les plans AR ne changent jamais de taille
+D. Les plans AR ne dépendent pas de la caméra
+
+30. Une application AR conserve les visualiseurs de plans en production. Quel problème UX cela peut créer ?
+A. L’utilisateur voit des surfaces de debug qui polluent l’expérience
+B. Les plans deviennent physiquement solides dans le monde réel
+C. L’AR Session est automatiquement détruite
+D. Les objets virtuels ne peuvent plus être rendus
+
+31. Un script utilise GameObject.Find() pour récupérer un objet critique dans chaque Update(). Pourquoi est-ce mauvais ?
+A. C’est coûteux et fragile si le nom ou la hiérarchie change
+B. C’est la méthode recommandée pour la VR haute performance
+C. Cela active automatiquement le garbage collector de façon bénéfique
+D. Cela améliore la stabilité AR
+
+32. Une animation ne se déclenche pas malgré animator.SetBool("Open", true). Quel piège est probable ?
+A. Le paramètre dans l’Animator ne s’appelle pas exactement "Open" ou la transition ne l’utilise pas
+B. SetBool ne fonctionne qu’en AR
+C. L’Animator ne peut pas être contrôlé par script
+D. Les booléens sont interdits dans Animator
+
+33. Une animation revient immédiatement à son état précédent. Quelle cause est plausible ?
+A. Une transition inverse ou une condition de sortie est satisfaite trop vite
+B. Le Rigidbody est trop lourd
+C. La caméra est trop proche
+D. Le script est dans le dossier Assets
+
+34. Une scène contient deux Audio Listeners après ajout d’un XR Origin. Quel problème peut apparaître ?
+A. Unity signale un conflit car une seule écoute audio active est attendue
+B. La physique est désactivée
+C. Les collisions deviennent triggers
+D. Le build Android devient impossible dans tous les cas
+
+35. En VR, le framerate est correct dans l’éditeur mais faible sur casque autonome. Quelle raison est la plus probable ?
+A. Les contraintes GPU/CPU du casque sont plus fortes que celles du PC
+B. Le casque utilise toujours plus de puissance qu’un PC
+C. Unity désactive l’optimisation en build
+D. Les matériaux n’existent pas sur casque
+
+36. Une lumière temps réel avec ombres dynamiques nombreuses pose problème en VR mobile. Pourquoi ?
+A. Les ombres temps réel sont coûteuses pour le GPU
+B. Les ombres améliorent toujours les FPS
+C. Les lumières désactivent XR Interaction Toolkit
+D. Les ombres ne sont pas visibles en VR
+
+37. Une méthode abonnée à un événement XR est appelée plusieurs fois pour une seule interaction. Quelle cause est probable ?
+A. L’abonnement est fait plusieurs fois sans désabonnement correct
+B. XR Interaction Toolkit appelle toujours les événements dix fois
+C. Le Canvas est en World Space
+D. Le build est en mode Development
+
+38. Où faut-il généralement se désabonner d’un événement inscrit dans OnEnable() ?
+A. Dans OnDisable()
+B. Dans Update()
+C. Dans Start() uniquement
+D. Dans FixedUpdate() uniquement
+
+39. Un objet doit être accessible dans plusieurs scènes sans être dupliqué. Quelle solution est la plus propre ?
+A. Manager persistant avec garde anti-doublon
+B. Copier manuellement l’objet dans chaque scène
+C. Utiliser FindObjectOfType() dans tous les scripts
+D. Mettre tous les objets dans Resources sans logique
+
+40. Pourquoi les questions précédentes sont difficiles ?
+A. Elles testent les interactions entre cycle de vie, physique, XR, AR et architecture
+B. Elles testent uniquement la mémorisation de noms de menus
+C. Elles évitent les cas pratiques
+D. Elles ne concernent pas Unity
+
+Corrigé et explications — Version 4
+A — Awake() peut précéder le Start() d’autres scripts.
+A — Le trigger 3D reçoit un Collider.
+A — Un Collider en trigger déclenche les callbacks OnTrigger....
+A — Les contrôleurs XR dépendent des actions d’entrée activées.
+A — Physics Layers et Interaction Layers sont deux filtres différents.
+A — La détection continue limite le tunneling.
+A — Déplacer directement le Transform peut court-circuiter la physique.
+A — Les overrides locaux peuvent masquer le prefab parent.
+A — En chargement additif, la scène active influence les créations.
+A — Sans garde anti-doublon, un manager persistant peut se multiplier.
+A — Les coroutines liées à un MonoBehaviour peuvent s’arrêter avec lui.
+A — [SerializeField] expose un champ privé dans l’Inspector.
+A — Les scènes de build peuvent avoir des références différentes.
+A — L’UI XR nécessite un raycaster/module compatible tracked device.
+A — Le module d’entrée doit être compatible XR.
+A — L’orientation de l’Attach Transform contrôle la pose de saisie.
+A — Le point d’attache influence la position de l’objet tenu.
+A — Les Interaction Layers peuvent empêcher la sélection.
+A — La distance du rayon détermine sa portée.
+A — Le pooling évite les coûts répétés d’instanciation/destruction.
+A — Un TrackableType trop large peut produire un point moins précis.
+A — Un Anchor améliore la stabilité spatiale.
+A — La taille physique influence l’échelle en image tracking.
+A — Une image peu distinctive se suit mal.
+A — Il faut réagir à l’état de tracking.
+A — Caméra et configuration XR sont critiques en AR mobile.
+A — La compatibilité ARCore dépend de l’appareil.
+A — Un Anchor local n’est pas automatiquement persistant entre sessions.
+A — Les plans AR sont raffinés pendant le tracking.
+A — Les visualiseurs de debug nuisent à l’expérience finale.
+A — GameObject.Find() répété est coûteux et fragile.
+A — Le nom du paramètre et la transition doivent correspondre.
+A — Une transition inverse peut annuler l’état.
+A — Il ne doit généralement y avoir qu’un Audio Listener actif.
+A — Le casque autonome est plus limité qu’un PC.
+A — Les ombres dynamiques sont coûteuses.
+A — Des abonnements multiples produisent plusieurs appels.
+A — OnDisable() est le complément logique de OnEnable().
+A — Un singleton persistant contrôlé évite les doublons.
+A — Le niveau difficile vient des interactions entre sous-systèmes.
+Version 5 — EXTRA HARD PIÈGE
+Questions QCU
+
+1. Un script doit initialiser ses propres références internes avant que d’autres scripts puissent les utiliser. Quelle méthode est la plus appropriée ?
+A. Awake()
+B. Update()
+C. OnDestroy()
+D. OnTriggerExit()
+
+2. Un script doit accéder à des références déjà initialisées par d’autres objets au démarrage. Quelle méthode est souvent plus sûre que Awake() ?
+A. Start()
+B. Reset()
+C. OnDrawGizmos()
+D. OnApplicationQuit()
+
+3. Un objet est inactif au lancement de la scène. Son Start() est-il appelé immédiatement ?
+A. Non, il sera appelé lorsqu’il devient actif pour la première fois
+B. Oui, Start() est toujours appelé même si l’objet est inactif
+C. Oui, mais seulement en AR
+D. Non, Start() n’existe pas dans MonoBehaviour
+
+4. FixedUpdate() peut être appelé plusieurs fois avant une frame graphique. Pourquoi ?
+A. Il suit un pas de temps physique fixe indépendant du rendu
+B. Il dépend uniquement de la résolution de l’écran
+C. Il est appelé seulement quand une collision se produit
+D. Il remplace LateUpdate() en VR
+
+5. LateUpdate() est souvent utilisé pour une caméra de suivi. Pourquoi ?
+A. Il s’exécute après Update(), donc après le déplacement de la cible
+B. Il s’exécute avant Awake()
+C. Il remplace le rendu de la caméra
+D. Il est obligatoire pour AR Foundation
+
+6. Un étudiant écrit void OnCollisionEnter(Collider other). Pourquoi cela ne fonctionne pas ?
+A. OnCollisionEnter reçoit un paramètre Collision, pas Collider
+B. OnCollisionEnter ne fonctionne qu’en 2D
+C. Le nom doit être CollisionEnter
+D. Il faut obligatoirement retourner bool
+
+7. Un étudiant écrit void OnTriggerEnter(Collision other). Quelle est l’erreur ?
+A. OnTriggerEnter reçoit un Collider, pas un Collision
+B. OnTriggerEnter doit être dans FixedUpdate()
+C. OnTriggerEnter retourne toujours un float
+D. OnTriggerEnter ne fonctionne qu’avec ARCore
+
+8. Deux objets avec Colliders ne déclenchent aucun OnTriggerEnter. L’un a Is Trigger, mais aucun n’a de Rigidbody. Quelle explication est la plus correcte ?
+A. Les événements trigger 3D nécessitent généralement qu’au moins un objet ait un Rigidbody
+B. Les triggers ne fonctionnent jamais en 3D
+C. Les deux objets doivent être des Canvas
+D. Les deux objets doivent avoir un Animator
+
+9. Un objet possède un Rigidbody mais ne doit pas être affecté par la gravité. Que modifier ?
+A. Désactiver Use Gravity
+B. Supprimer le Transform
+C. Activer Is Trigger sur tous les Colliders
+D. Supprimer le Rigidbody obligatoirement
+
+10. Un Rigidbody doit être contrôlé par script sans être poussé par les forces physiques ordinaires. Quel réglage peut être pertinent ?
+A. Is Kinematic
+B. Is Trigger
+C. Static Batching
+D. Navigation Static
+
+11. Un objet VR saisi doit conserver une sensation physique, mais il traverse les murs à haute vitesse. Quelle combinaison est la plus pertinente ?
+A. Rigidbody correctement configuré, Collision Detection adaptée et interaction XR réglée
+B. Canvas Overlay et Audio Listener
+C. AR Session et Image Tracking
+D. Lightmap et Skybox uniquement
+
+12. Dans XR Interaction Toolkit, un objet est visible par le rayon mais non sélectionnable. Quelle différence peut expliquer cela ?
+A. Le raycast visuel peut toucher l’objet, mais les Interaction Layers ou filtres empêchent la sélection
+B. Tout objet visible est automatiquement sélectionnable
+C. Le matériau empêche toujours la sélection
+D. La caméra décide seule des interactions XR
+
+13. Un objet a XR Grab Interactable, un Collider et un Rigidbody. Il reste non saisissable. Quelle cause est encore plausible ?
+A. Aucun XR Direct/Ray Interactor actif ou compatible ne tente la sélection
+B. Il manque forcément une AR Camera
+C. Il manque obligatoirement un Terrain
+D. Unity interdit plusieurs Colliders sur un objet VR
+
+14. Une main VR peut saisir un objet destiné uniquement au socket. Quelle solution est la plus propre ?
+A. Filtrer avec Interaction Layers ou règles de sélection
+B. Supprimer tous les Interactors
+C. Rendre l’objet invisible
+D. Augmenter la gravité
+
+15. Un objet saisi se positionne correctement mais sa rotation est inversée de 90 degrés. Quel piège est le plus probable ?
+A. Orientation du prefab ou de l’Attach Transform incorrecte
+B. Mauvaise taille du bouton UI
+C. Absence de plane detection
+D. Mauvais nom de Build Settings
+
+16. En VR, une UI World Space est derrière l’utilisateur après téléportation. Quelle amélioration est la plus adaptée ?
+A. Repositionner ou orienter l’UI relativement à l’utilisateur ou à une ancre logique
+B. Convertir tous les boutons en Rigidbody
+C. Supprimer le Canvas
+D. Ajouter ARKit au projet
+
+17. Un menu VR est trop proche de la caméra et provoque une gêne. Quelle correction est correcte ?
+A. Respecter une distance lisible et confortable dans l’espace 3D
+B. Augmenter la vitesse de rotation de la caméra
+C. Réduire le framerate pour stabiliser l’image
+D. Mettre le Canvas dans le sol
+
+18. Un projet VR utilise un déplacement fluide rapide sans vignettage, snap turn ou téléportation. Quel risque augmente ?
+A. Cinétose ou inconfort utilisateur
+B. Meilleure tolérance automatique
+C. Suppression de la gravité
+D. Désactivation des collisions
+
+19. Un raycast AR est lancé au toucher, mais place parfois l’objet sur une surface non souhaitée. Que faut-il contrôler ?
+A. Les types de trackables autorisés et le filtrage du résultat
+B. Le nom du dossier Materials
+C. La présence d’un XR Socket Interactor
+D. La couleur de l’Audio Listener
+
+20. Un objet AR doit être placé uniquement dans la zone réellement détectée du plan. Quel type est le plus pertinent ?
+A. PlaneWithinPolygon
+B. FeaturePointOnlyAlways
+C. ScreenOverlayPlane
+D. AnyCollider2D
+
+21. Un objet AR placé avec un simple transform.position semble stable au début puis dérive. Quelle solution améliore la cohérence ?
+A. Ajouter ou utiliser un ARAnchor approprié
+B. Supprimer la caméra AR
+C. Utiliser uniquement une animation
+D. Mettre l’objet dans un Canvas Overlay
+
+22. Une image trackée en AR affiche le prefab à l’envers. Quelle correction est la plus logique ?
+A. Corriger le pivot, les axes ou l’offset local du prefab par rapport à l’image
+B. Ajouter un Rigidbody avec gravité
+C. Désactiver ARTrackedImageManager
+D. Ajouter une lumière ponctuelle obligatoirement
+
+23. Une image tracking fonctionne sur une image imprimée, mais mal sur un écran brillant. Pourquoi ?
+A. Reflets, luminosité et contraste peuvent nuire au suivi visuel
+B. Les écrans ne peuvent jamais être suivis
+C. AR Foundation interdit les images numériques
+D. Le Rigidbody de l’écran est absent
+
+24. Une Reference Image Library contient des images sans taille physique correcte. Quel effet possible ?
+A. Mauvaise échelle ou mauvais positionnement relatif du contenu augmenté
+B. Impossible de compiler le C#
+C. Désactivation automatique de la caméra
+D. Suppression des scènes du build
+
+25. Une application AR doit réagir si l’appareil n’est pas compatible. Quelle pratique est correcte ?
+A. Vérifier l’état/support AR et afficher un message ou fallback
+B. Lancer quand même la scène sans caméra
+C. Supposer que tous les appareils modernes sont compatibles
+D. Désactiver toutes les permissions
+
+26. Un build Android AR échoue à cause de l’architecture cible. Quel réglage est souvent exigé pour les builds modernes ARCore ?
+A. ARM64 activé selon les exigences de plateforme
+B. WebGL activé
+C. Windows x86 uniquement
+D. Sprite Packing activé
+
+27. Une scène AR fonctionne dans Unity Remote mais pas dans le vrai build. Quel piège est important ?
+A. Unity Remote ne remplace pas un test AR complet sur appareil réel
+B. Unity Remote garantit toujours la compatibilité ARCore
+C. Unity Remote compile automatiquement ARKit
+D. Unity Remote sauvegarde les Anchors dans le cloud
+
+28. Un objet AR est placé une fois, mais un second toucher le duplique malgré l’intention. Quelle logique manque ?
+A. Un état booléen ou une gestion empêchant les placements multiples
+B. Une deuxième AR Camera
+C. Un Mesh Collider sur le téléphone
+D. Un Audio Source sur le prefab
+
+29. Une fonction d’interaction AR est appelée alors que l’utilisateur appuie sur un bouton UI. Quel test doit être ajouté ?
+A. Vérifier si le pointeur/toucher est au-dessus de l’UI avant le raycast AR
+B. Vérifier si la scène contient une Directional Light
+C. Vérifier si le Rigidbody dort
+D. Vérifier si le prefab a un son
+
+30. Un script de placement AR mélange lecture des touches, raycast, instanciation, rotation, UI et sauvegarde. Quel problème architectural cela pose ?
+A. Responsabilités trop mélangées, code difficile à maintenir et tester
+B. Meilleure encapsulation automatique
+C. Meilleur framerate garanti
+D. Moins de risques de bugs
+
+31. Quelle solution améliore l’architecture d’un projet Unity VR/AR complexe ?
+A. Séparer managers, scripts d’interaction, scripts UI et données configurables
+B. Mettre toute la logique dans un seul Update() global
+C. Utiliser uniquement des noms d’objets pour les références
+D. Éviter tous les Prefabs
+
+32. Pourquoi utiliser un ScriptableObject pour certaines données de configuration ?
+A. Centraliser des données réutilisables sans les dupliquer dans chaque scène
+B. Remplacer totalement les MonoBehaviour
+C. Ajouter automatiquement des Colliders
+D. Compiler l’application plus vite dans tous les cas
+
+33. Quel piège existe avec un ScriptableObject modifié pendant le Play Mode dans l’éditeur ?
+A. Certaines modifications d’asset peuvent persister et surprendre après l’arrêt
+B. Les ScriptableObjects sont toujours temporaires
+C. Les ScriptableObjects ne peuvent jamais être modifiés
+D. Ils détruisent les Prefabs automatiquement
+
+34. Une variable statique garde une ancienne valeur après changement de scène. Pourquoi ?
+A. Les champs statiques appartiennent au type et peuvent persister tant que le domaine n’est pas rechargé
+B. Les variables statiques sont réinitialisées à chaque frame
+C. Les variables statiques sont interdites en Unity
+D. Les variables statiques ne fonctionnent qu’en UI
+
+35. Un étudiant utilise Time.deltaTime dans FixedUpdate() pour une force physique. Quel piège faut-il connaître ?
+A. En physique, il faut comprendre la différence entre deltaTime et fixedDeltaTime selon l’usage
+B. deltaTime est toujours égal à zéro
+C. FixedUpdate() ne connaît pas le temps
+D. deltaTime ne fonctionne qu’en AR
+
+36. Une rotation est appliquée avec des angles d’Euler et produit des comportements inattendus. Quelle alternative est souvent plus robuste ?
+A. Utiliser les Quaternions correctement
+B. Utiliser uniquement des strings
+C. Utiliser un Audio Mixer
+D. Utiliser une Reference Image Library
+
+37. Un objet enfant d’un contrôleur VR a une position inattendue. Quelle confusion est probable ?
+A. Confusion entre coordonnées locales et coordonnées monde
+B. Confusion entre ARCore et ARKit uniquement
+C. Confusion entre Audio Source et Audio Listener
+D. Confusion entre Canvas et Animator Controller
+
+38. En build mobile, les logs Unity Editor ne montrent pas l’erreur réelle. Que faire ?
+A. Consulter les logs du périphérique avec les outils adaptés
+B. Changer uniquement le thème de l’éditeur
+C. Ajouter un autre Canvas
+D. Renommer le fichier de scène
+
+39. Pour optimiser VR/AR, quelle affirmation est la plus correcte ?
+A. Mesurer avec Profiler avant d’optimiser évite les corrections inutiles
+B. Il faut toujours supprimer tous les shaders
+C. Il faut toujours éviter les Prefabs
+D. Il faut toujours utiliser le plus grand nombre de lumières temps réel
+
+40. Dans une question QCU piégeuse, deux réponses semblent correctes. Comment choisir ?
+A. Identifier celle qui répond précisément au problème décrit, pas seulement une vérité générale
+B. Choisir la plus longue automatiquement
+C. Choisir toujours la réponse contenant “Rigidbody”
+D. Choisir la première réponse technique
+
+Corrigé et explications — Version 5
+A — Awake() sert souvent à initialiser les références propres à l’objet.
+A — Start() est plus sûr si d’autres objets doivent finir leur Awake().
+A — Start() attend la première activation de l’objet/script.
+A — FixedUpdate() suit le pas fixe de la physique.
+A — LateUpdate() suit les mouvements déjà effectués dans Update().
+A — OnCollisionEnter utilise Collision.
+A — OnTriggerEnter utilise Collider.
+A — Un Rigidbody est généralement nécessaire pour générer les événements trigger.
+A — Use Gravity contrôle l’effet de la gravité.
+A — Is Kinematic permet un contrôle scripté sans dynamique classique.
+A — Il faut traiter rigidbody, collision detection et interaction ensemble.
+A — Voir un objet ne signifie pas pouvoir le sélectionner.
+A — Il faut aussi un interactor actif et compatible.
+A — Les filtres XR évitent les sélections non voulues.
+A — L’Attach Transform influence la rotation tenue.
+A — Une UI VR doit suivre une logique spatiale confortable.
+A — Trop proche, une UI VR devient fatigante.
+A — Le déplacement fluide rapide peut provoquer de la cinétose.
+A — Le filtrage des résultats AR Raycast est essentiel.
+A — PlaneWithinPolygon limite au polygone détecté du plan.
+A — Un Anchor stabilise mieux la pose AR.
+A — Orientation et pivot déterminent l’alignement sur l’image.
+A — Les reflets et variations lumineuses perturbent le tracking.
+A — La taille physique influence l’échelle du contenu.
+A — Il faut gérer explicitement les appareils non compatibles.
+A — ARM64 est souvent requis pour les builds Android modernes AR.
+A — Unity Remote ne remplace pas un build réel AR.
+A — Il manque une gestion d’état anti-duplication.
+A — Il faut éviter que l’UI déclenche aussi une action AR.
+A — Trop de responsabilités rendent le code fragile.
+A — La séparation améliore maintenance et évolutivité.
+A — ScriptableObject centralise des données réutilisables.
+A — Modifier un asset en Play Mode peut laisser des changements.
+A — Les statiques peuvent survivre aux changements de scène.
+A — Le temps physique doit être utilisé avec précision.
+A — Les Quaternions évitent certains pièges des angles d’Euler.
+A — Parent/enfant implique souvent une confusion local/world.
+A — Les erreurs de build mobile se diagnostiquent sur appareil.
+A — Le Profiler évite l’optimisation à l’aveugle.
+A — En QCU difficile, la meilleure réponse est la plus spécifique au scénario.
